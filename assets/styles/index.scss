@@ -1,1 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
+
+.grid {
+    display: table;
+    border-spacing: 5px
+  }
+  .row {
+    display: table-row
+  }
+  .container {
+    width: 100px;
+    height: 100px;
+    background: rgb(228, 78, 190);
+    display: table-cell;
+  }
+  

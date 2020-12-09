@@ -1,17 +1,126 @@
-<!DOCTYPE html>
-<html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <!-- 
+       // <h1 class="game--title">Tic Tac Toe</h1>
+        <div class="game--container">
+            <div data-cell-index="0" class="cell"></div>
+            <div data-cell-index="1" class="cell"></div>
+            <div data-cell-index="2" class="cell"></div>
+            <div data-cell-index="3" class="cell"></div>
+            <div data-cell-index="4" class="cell"></div>
+            <div data-cell-index="5" class="cell"></div>
+            <div data-cell-index="6" class="cell"></div>
+            <div data-cell-index="7" class="cell"></div> -->
+            <!-- //<div data-cell-index="8" class="cell"></div> -->
+  
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
-</html>
+            <!DOCTYPE html>
+            <html>
+            
+                <head>
+                    
+                  <title>TICTACTOTAL</title>
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                  <!-- Do not add `link` tags-->
+                  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+                  <!-- Do not add `script` tags-->
+                  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+                  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+            
+            
+            
+              <meta charset="UTF-8">
+                <meta name="viewport"
+                      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>T.T.T</title>
+                <link rel="stylesheet" href="style.css">
+              <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+            
+            
+            </head>
+                <body>
+                  <h1>Tic Tac Total</h1>
+                  <h2>BY JGP$</h2>
+                  <p id="message"></p>
+                  <div class="unauthenticated">
+                  <form id="sign-up">
+                    <input
+                      placeholder="email"
+                      type="text"
+                      name="credentials[email]"
+                    />
+                    <input
+                      type="password"
+                      placeholder="Enter password here"
+                      name="credentials[password]"
+                    />
+                    <input
+                      placeholder="Confirm password here"
+                      type="password"
+                      name="credentials[password_confirmation]"
+                    />
+                    <button type="submit">Sign Up</button>
+                  </form>
+                 
+                  <form id="sign-in">
+                    <input
+                      placeholder="email"
+                      type="text"
+                      name="credentials[email]"
+                    />
+                    <input
+                      placeholder="password"
+                      type="password"
+                      name="credentials[password]"
+                    />
+                    <button type="submit">Sign In</button>
+                  </form>
+                </div>
+                  <div class="authenticated">
+                  <form id="change-password">
+                    <input
+                      placeholder="old password"
+                      type="password"
+                      name="passwords[old]"
+                    />
+                    <input
+                      placeholder="new password"
+                      type="password"
+                      name="passwords[new]"
+                    />
+                    <button type="submit">Change Password</button>
+                    </form>          
+                    
+                    <form id='Change Password'>
+                      <button type='click'>Sign Out!!</button>
+            
+                    </form>
+                    <section>
+                        <h1>Tic Tac Toe</h1>
+                      <div class="container">
+              <div class="row">
+                <div class="cell">1</div>
+                <div class="cell">2</div>
+                <div class="cell">3</div>
+              </div>
+              <div class="row">
+                <div class="cell">4</div>
+                <div class="cell">5</div>
+                <div class="cell">6</div>
+              </div>
+              <div class="row">
+                <div class="cell">7</div>
+                <div class="cell">8</div>
+                <div class="cell">9</div>
+              </div>
+            </div>
+                        <h2 class="game--status"></h2>
+                        <button class="game--restart">RUN IT BACK!!!!</button>
+                    </section>
+                
+                    <script src="script.js"></script>
+                  
+            
+                </body>
+            </html>
