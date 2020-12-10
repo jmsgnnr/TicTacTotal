@@ -41,6 +41,7 @@ api.signOut(data)
 .catch(ui.signOutFailure)
 }
 
+
 module.exports = {
   
   onSignUp,
