@@ -16,5 +16,7 @@ $(() => {
 
   // Change Password listener:
   $('#change-password').on('submit', authEvents.onChangePassword)
-  $('signout-button').on('click', authEvents.onSignOut)
+  $('.signOut').on('click', authEvents.onSignOut)
+  $('.testing').on('click', authEvents.onNewGame)
+
 })

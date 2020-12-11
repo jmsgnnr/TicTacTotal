@@ -4,7 +4,7 @@ const store = require('./store')
 
 const signUpSuccess = function (response) {
   $('#message').text('Signed Up Successfully! :)')
-  
+  $('form').trigger('reset')  
 }
 
 const signUpFailure = function (error) {
@@ -16,6 +16,7 @@ const signInSuccess = function (response) {
   $('#message').text('Sign In Success! Welcome :)')
   console.log(store)
   store.user = response.user
+  $('form').trigger('reset')  
   
 $('.unauthenticated').hide()
 $('.authenticated').show()
@@ -31,6 +32,7 @@ const signInFailure = function (error) {
 // So there is no response object
 const changePasswordSuccess = function () {
     $('#message').text('Change password success! :)')
+    $('form').trigger('reset')  
   }
 
 const changePasswordFailure = function (error) {
@@ -43,6 +45,11 @@ const signOutSuccess = function () {
 $('.authenticated').show()
 store.user = null
    
+
+  }
+  const newGameSuccess = function (){
+    console.log('HOWDY')
+
 
   }
   const statusDisplay = document.querySelector('.game--status');
@@ -61,10 +68,12 @@ statusDisplay.innerHTML = currentPlayerTurn();
     $('.authenticated').show()
     $('#message').text('sign out failure :)')
   }
-  function handlePlayerChange() {
+  function playerChange() {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     statusDisplay.innerHTML = currentPlayerTurn();
 }
+
+
 
  
 
@@ -78,6 +87,7 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signOutFailure,
-  handlePlayerChange,
+  playerChange,
+  newGameSuccess
   
 }
