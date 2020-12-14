@@ -18,7 +18,6 @@ const signIn = function (formData) {
   })
 }
 
-// Authenticated change password AJAX request:
 const changePassword = function (formData) {
   console.log(store.user)
   return $.ajax({
@@ -39,24 +38,22 @@ const signOut = function () {
       }
       })
   }
-const newGame = function() {
- const data = store.user.token
-return $.ajax({
-  url: config.apiUrl + '/games',
-  method: 'POST' ,
-  headers: {
-    Authorization: 'Bearer ' + store.user.token
-  }
-})
+  const newGame = function() {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST' ,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
 }
-  
-  
+
 
 
 module.exports = {
-  signUp,
-  signIn,
-  changePassword,
-  signOut, 
-  newGame
+signUp,
+signIn,
+changePassword,
+signOut, 
+newGame
 }

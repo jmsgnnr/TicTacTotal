@@ -3,6 +3,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../lib/get-form-fields')
+const gameLogic  = require('./gameLogic.js')
 
 const onSignUp = function (event) {
   
@@ -35,17 +36,23 @@ const onChangePassword = function (event) {
 }
 const onSignOut = function(event){
 event.preventDefault()
+
 api.signOut()
 .then(ui.signOutSuccess)
 .catch(ui.signOutFailure)
 }
+
 const onNewGame = function(event){
+  console.log('youve made it to events!')
   event.preventDefault()
   api.newGame()
   .then(ui.newGameSuccess)
-  
+  .catch(ui.newGameFailure)
+   
 
 }
+
+
 
 
 
@@ -55,6 +62,7 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onNewGame
+  onNewGame,
+
 }
 

@@ -1,12 +1,19 @@
+'use strict'
 const statusDisplay = document.querySelector('.game--status');
+document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
+document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
+
 
 let gameActive = true;
 let currentPlayer = "X";
 let gameState = ["", "", "", "", "", "", "", "", ""];
 
+
 const winningMessage = () => `Player ${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+
+
 
 statusDisplay.innerHTML = currentPlayerTurn();
 
@@ -83,5 +90,72 @@ function handleRestartGame() {
     document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
 }
 
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
-document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
+
+
+
+
+
+
+
+
+
+
+
+
+// const winningNumbas = [
+//   [0, 1, 2],
+//   [3, 4, 5],
+//   [6, 7, 8],
+//   [0, 6, 3],
+//   [1, 4, 7],
+//   [2, 8, 5],
+//   [0, 4, 8],
+//   [4, 2, 6]
+// ];
+
+// const howdyPartner = function (){
+//   let winnerChicken = store.game.over
+//   for (i= 0; i <= 8; i++){
+//   console.log('yooooo')
+//   }
+// }
+
+
+
+
+
+
+
+// const onBoardClick = function (event) {
+//   // console.log('did u do the thing?')
+// // event target refers to the click on the baord, and which div's index
+// const cellIndex = $(event.target).data('cell-index')
+// // gets the array of cells from inside game comes from api
+// // console.log(cellIndex)
+// const gameArray = store.game.cells
+// // value in the specific position of game board
+// const value = gameArray[cellIndex]
+// // if space is empty
+// if (value === '') {
+// // add player to board
+// $(event.target).html(playerSpot)
+// // update API
+// api.boardClick(cellIndex, playerSpot)
+//  .then(ui.boardClickSuccess)
+// // checkWinner() should be here
+
+// // change turn
+// if (playerSpot === 'X') {
+//  playerSpot = 'O'
+// } else {
+//  playerSpot = 'X'
+// }
+// // else space is taken
+// } else {
+// $('#message').text('Spot taken')
+// // $('#message').text(playerSpot + '\'s turn')
+
+// }
+
+
+// module

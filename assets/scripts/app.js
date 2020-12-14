@@ -1,5 +1,7 @@
 'use strict'
-const authEvents = require('./events')
+const preGameEvents = require('./preGameEvents')
+const gameLogic = require('./gameLogic')
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -8,15 +10,13 @@ const authEvents = require('./events')
 
 $(() => {
   $('.authenticated').hide()
-  // Sign Up listener:
-  $('#sign-up').on('submit', authEvents.onSignUp)
-
-  // Sign In listener:
-  $('#sign-in').on('submit', authEvents.onSignIn)
-
-  // Change Password listener:
-  $('#change-password').on('submit', authEvents.onChangePassword)
-  $('.signOut').on('click', authEvents.onSignOut)
-  $('.testing').on('click', authEvents.onNewGame)
+  $('.gameBoard').hide()
+  $('#sign-up').on('submit', preGameEvents.onSignUp)
+  $('#sign-in').on('submit', preGameEvents.onSignIn)
+  $('#change-password').on('submit', preGameEvents.onChangePassword)
+  $('.signOut').on('click', preGameEvents.onSignOut)
+  $('#play').on('click', preGameEvents.onSignOut)
+$('.testing').on('click', preGameEvents.onNewGame)
+$('.gameBoard').on('click', gameLogic.gameRunFormula())
 
 })

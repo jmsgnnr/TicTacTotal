@@ -5,21 +5,26 @@
 
 section {
     text-align: center;
+    background-color:  pink
 }
 .h1{
-    text-align: left;
+    text-align: center;
 
 }
 
 .game-container {
+  text-align:center;
     display: grid;
   border: 30px;
-    grid-template-columns: repeat(3, auto);         width: 400px;
+  border-style: 20px ridge grey;
+    grid-template-columns: repeat(3, auto);        
+     width: 400px;
     margin: 50px auto;
   ;
 }
 
 .cell {
+  text-align: center;
     width: 150px;
     height: 150px;
     box-shadow: 0 0 0 1px #333333;
