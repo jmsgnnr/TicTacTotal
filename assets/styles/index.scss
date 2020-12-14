@@ -1,22 +1,65 @@
   
 @import '~bootstrap/scss/bootstrap';
 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;1,700&display=swap');
 
 
 section {
     text-align: center;
     background-color:  pink
 }
+.body{
+  background-color: grey;
+}
+.unauthenticated{
+  border: ridge black 5px;
+  font-family:'JetBrains Mono', monospace;
+  text-align: center;
+background-color: pink;
+border-radius: 5px;
+
+
+}
+
+.authenticated{
+  border: ridge rgb(243, 242, 242) 10px;
+  font-family:'JetBrains Mono', monospace;
+  text-align: center;
+background-color: rgb(7, 2, 2);
+border-radius: 5px;
+
+}
+.head1{
+  font-family:'JetBrains Mono', monospace;
+  text-align: center;
+  border : 10px ridge #2b2020;
+  box-shadow: 0px 8px 8px #161314;
+background : #eeced1;
+
+}
+.head2{
+  font-family:'JetBrains Mono', monospace;
+  text-align: center;
+  border : 10px ridge #2b2020;
+  box-shadow: 0px 8px 8px #080707;
+background : #f0b3b8;
+}
+
+.gameBoard{
+  
+  background: rgb(255, 235, 235);
+}
 
 .game-title {
-  box-shadow: 0px 20px 8px #a3c40d;
+  box-shadow: 10 10 10 8px #090a02;
+  border-radius : 5px;
+  border-style: 10px 20px ridge ;
+background-color: rgb(224, 187, 192);
 }
-.h1{
-    text-align: center;
 
-}
 
 .game-container {
+  
   text-align:center;
     display: grid;
   border: 30px;
@@ -24,16 +67,24 @@ section {
     grid-template-columns: repeat(3, auto);        
      width: 400px;
     margin: 50px auto;
-  ;
+  
 }
 
 .cell {
   text-align: center;
+  background-color: #ff97cb;
     width: 150px;
     height: 150px;
-    box-shadow: 10px 5px  20px #2f0dc4;
-    border: 10px solid #cf1582;
-    cursor: cell;
+    box-shadow: 10px 5px  20px #161416;
+    border: 10px ridge #080808;
+    cursor: help;
     line-height: 90px;
     font-size: 90px;
+}
+#message{
+  text-align: center;
+  border: 3px ridge;
+  font-family:'JetBrains Mono', monospace;
+background-color: rgb(250, 237, 239);
+border-radius: 5px;
 }

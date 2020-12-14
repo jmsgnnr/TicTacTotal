@@ -1,5 +1,6 @@
 'use strict'
-
+// followed formula from notes.
+// use api docs , make sure to compare for game docs 
 const config = require('./config.js')
 const store = require('./store')
 

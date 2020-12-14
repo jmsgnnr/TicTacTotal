@@ -17,6 +17,7 @@ $(() => {
   $('.signOut').on('click', preGameEvents.onSignOut)
   $('#play').on('click', preGameEvents.onSignOut)
 $('.testing').on('click', preGameEvents.onNewGame)
+////REMEMBER ( FOR YOUR FUNCTIONS)
 $('.gameBoard').on('click', gameLogic.gameRunFormula())
 
 })
