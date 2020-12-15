@@ -8,9 +8,7 @@ section {
     text-align: center;
     background-color:  pink
 }
-.body{
-  background-color: grey;
-}
+
 .unauthenticated{
   border: ridge black 5px;
   font-family:'JetBrains Mono', monospace;
@@ -76,7 +74,7 @@ background-color: rgb(224, 187, 192);
     width: 150px;
     height: 150px;
     box-shadow: 10px 5px  20px #161416;
-    border: 10px ridge #080808;
+    border: 10px 10px 10px   ridge white #2b2020;
     cursor: help;
     line-height: 90px;
     font-size: 90px;
