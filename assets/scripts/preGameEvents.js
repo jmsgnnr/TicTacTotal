@@ -51,6 +51,13 @@ const onNewGame = function(event){
    
 
 }
+const onGetGames = function (event){
+
+console.log('yep')
+event.preventDefault()
+api.getGames()
+.then(ui.getGamesSuccess)
+}
 
 
 
@@ -63,6 +70,7 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onNewGame,
+  onGetGames,
 
 }
 

@@ -1,5 +1,7 @@
 'use strict'
 const store = require('./store')
+const gameApi = require('./gameApi')
+
 
 
 const signUpSuccess = function (response) {
@@ -18,16 +20,21 @@ const signInSuccess = function (response) {
   
 $('.unauthenticated').hide()
 $('.authenticated').show()
+$('form').trigger('reset')
 
 }
 
 
 const signInFailure = function (error) {
   $('#message').text('Sign In failed!!!!' + error.responseJSON.message)
+  $('form').trigger('reset')
+
 }
 
 const changePasswordSuccess = function () {
     $('#message').text('Change password success! :)')
+    $('form').trigger('reset')
+
   }
 
 const changePasswordFailure = function (error) {
@@ -45,21 +52,33 @@ $('form').trigger('reset')
   }
   const signOutFailure = function (){
 console.log('hi')
+$('form').trigger('reset')
+
 
   }
-  const newGameSuccess = function (){
-    let gameState = ["", "", "", "", "", "", "", "", ""];
+  const newGameSuccess = function (games){
     $('#message').text('New Game Success! Welcome :)')
     console.log(store)
     $('.gameBoard').show()
     $('.testing').hide()
+    $('form').trigger('reset')
+
   }
   const newGameFailure = function (error){
     $('#message').text('new game failed wit error: ' + error.responseJSON.message)
-    
-}
+    $('form').trigger('reset')
 
- 
+  
+}
+const getGamesSuccess = function (responseData) {
+  console.log(responseData)
+  const numberOfGamesPlayed = responseData.games.length
+
+  $('#message').text('Total Games Played: ' + numberOfGamesPlayed)
+    $('form').trigger('reset')
+
+  }
+
 
 
 module.exports = {
@@ -72,7 +91,9 @@ module.exports = {
   signOutSuccess,
   newGameSuccess,
   newGameFailure,
-  signOutFailure
+  signOutFailure,
+  getGamesSuccess,
+ 
 
   
 }

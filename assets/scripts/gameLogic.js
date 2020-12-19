@@ -88,11 +88,12 @@ const gameRunFormula = function (){
     
     function handleRestartGame() {
         gameActive = true;
-        currentPlayer = "";
+        currentPlayer = "X";
         gameState = ["", "", "", "", "", "", "", "", ""];
         statusDisplay.innerHTML = currentPlayerTurn();
         document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
     }
+
 }
 
 
@@ -107,7 +108,7 @@ module.exports = {
 
 
 
-
+// curl --include --request GET "https://library-express-api.herokuapp.com/books/${ID}"
 
 // original formula testing 
 
@@ -133,38 +134,3 @@ module.exports = {
 
 
 
-
-
-// const onBoardClick = function (event) {
-//   // console.log('did u do the thing?')
-// // event target refers to the click on the baord, and which div's index
-// const cellIndex = $(event.target).data('cell-index')
-// // gets the array of cells from inside game comes from api
-// // console.log(cellIndex)
-// const gameArray = store.game.cells
-// // value in the specific position of game board
-// const value = gameArray[cellIndex]
-// // if space is empty
-// if (value === '') {
-// // add player to board
-// $(event.target).html(playerSpot)
-// // update API
-// api.boardClick(cellIndex, playerSpot)
-//  .then(ui.boardClickSuccess)
-// // checkWinner() should be here
-
-// // change turn
-// if (playerSpot === 'X') {
-//  playerSpot = 'O'
-// } else {
-//  playerSpot = 'X'
-// }
-// // else space is taken
-// } else {
-// $('#message').text('Spot taken')
-// // $('#message').text(playerSpot + '\'s turn')
-
-// }
-
-
-// module

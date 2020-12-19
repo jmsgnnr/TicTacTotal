@@ -19,5 +19,6 @@ $(() => {
 $('.testing').on('click', preGameEvents.onNewGame)
 ////REMEMBER ( FOR YOUR FUNCTIONS)
 $('.gameBoard').on('click', gameLogic.gameRunFormula())
+$('.getGames').on('click', preGameEvents.onGetGames)
 
 })

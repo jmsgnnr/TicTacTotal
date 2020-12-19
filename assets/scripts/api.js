@@ -3,6 +3,7 @@
 const config = require('./config')
 const store = require('./store')
 
+
 const signUp = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -47,6 +48,14 @@ const signOut = function () {
     }
   })
 }
+  const getGames = function (){
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {authorization: 'Token token=' + store.user.token},
+    data: {}
+  })
+}
 
 
 
@@ -55,5 +64,6 @@ signUp,
 signIn,
 changePassword,
 signOut, 
-newGame
+newGame,
+getGames
 }
