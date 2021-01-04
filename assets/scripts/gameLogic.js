@@ -44,6 +44,7 @@ const gameRunFormula = function (){
     
     function handleResultValidation() {
         let roundWon = false;
+        // 7 or 8?
         for (let i = 0; i <= 7; i++) {
             const winCondition = winningConditions[i];
             let a = gameState[winCondition[0]];
