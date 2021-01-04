@@ -3919,6 +3919,7 @@ var gameRunFormula = function gameRunFormula() {
 
     function handleResultValidation() {
         var roundWon = false;
+        // 7 or 8?
         for (var i = 0; i <= 7; i++) {
             var winCondition = winningConditions[i];
             var a = gameState[winCondition[0]];
@@ -3963,7 +3964,7 @@ var gameRunFormula = function gameRunFormula() {
 
     function handleRestartGame() {
         gameActive = true;
-        currentPlayer = "";
+        currentPlayer = "X";
         gameState = ["", "", "", "", "", "", "", "", ""];
         statusDisplay.innerHTML = currentPlayerTurn();
         document.querySelectorAll('.cell').forEach(function (cell) {
@@ -3974,6 +3975,8 @@ var gameRunFormula = function gameRunFormula() {
 
 module.exports = {
     gameRunFormula: gameRunFormula
+
+    // curl --include --request GET "https://library-express-api.herokuapp.com/books/${ID}"
 
     // original formula testing 
 
@@ -3994,41 +3997,6 @@ module.exports = {
     //   console.log('yooooo')
     //   }
     // }
-
-
-    // const onBoardClick = function (event) {
-    //   // console.log('did u do the thing?')
-    // // event target refers to the click on the baord, and which div's index
-    // const cellIndex = $(event.target).data('cell-index')
-    // // gets the array of cells from inside game comes from api
-    // // console.log(cellIndex)
-    // const gameArray = store.game.cells
-    // // value in the specific position of game board
-    // const value = gameArray[cellIndex]
-    // // if space is empty
-    // if (value === '') {
-    // // add player to board
-    // $(event.target).html(playerSpot)
-    // // update API
-    // api.boardClick(cellIndex, playerSpot)
-    //  .then(ui.boardClickSuccess)
-    // // checkWinner() should be here
-
-    // // change turn
-    // if (playerSpot === 'X') {
-    //  playerSpot = 'O'
-    // } else {
-    //  playerSpot = 'X'
-    // }
-    // // else space is taken
-    // } else {
-    // $('#message').text('Spot taken')
-    // // $('#message').text(playerSpot + '\'s turn')
-
-    // }
-
-
-    // module
 
 };
 
@@ -16693,6 +16661,7 @@ $(function () {
   $('.testing').on('click', preGameEvents.onNewGame);
   ////REMEMBER ( FOR YOUR FUNCTIONS)
   $('.gameBoard').on('click', gameLogic.gameRunFormula());
+  $('.getGames').on('click', preGameEvents.onGetGames);
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(47)))
 
@@ -16743,6 +16712,12 @@ var onNewGame = function onNewGame(event) {
   event.preventDefault();
   api.newGame().then(ui.newGameSuccess).catch(ui.newGameFailure);
 };
+var onGetGames = function onGetGames(event) {
+
+  console.log('yep');
+  event.preventDefault();
+  api.getGames().then(ui.getGamesSuccess);
+};
 
 module.exports = {
 
@@ -16750,7 +16725,8 @@ module.exports = {
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
   onSignOut: onSignOut,
-  onNewGame: onNewGame
+  onNewGame: onNewGame,
+  onGetGames: onGetGames
 
 };
 
@@ -16808,13 +16784,22 @@ var newGame = function newGame() {
     }
   });
 };
+var getGames = function getGames() {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: { authorization: 'Token token=' + store.user.token },
+    data: {}
+  });
+};
 
 module.exports = {
   signUp: signUp,
   signIn: signIn,
   changePassword: changePassword,
   signOut: signOut,
-  newGame: newGame
+  newGame: newGame,
+  getGames: getGames
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(47)))
 
@@ -16865,14 +16850,17 @@ var signInSuccess = function signInSuccess(response) {
 
   $('.unauthenticated').hide();
   $('.authenticated').show();
+  $('form').trigger('reset');
 };
 
 var signInFailure = function signInFailure(error) {
   $('#message').text('Sign In failed!!!!' + error.responseJSON.message);
+  $('form').trigger('reset');
 };
 
 var changePasswordSuccess = function changePasswordSuccess() {
   $('#message').text('Change password success! :)');
+  $('form').trigger('reset');
 };
 
 var changePasswordFailure = function changePasswordFailure(error) {
@@ -16889,16 +16877,25 @@ var signOutSuccess = function signOutSuccess() {
 };
 var signOutFailure = function signOutFailure() {
   console.log('hi');
+  $('form').trigger('reset');
 };
-var newGameSuccess = function newGameSuccess() {
-  var gameState = ["", "", "", "", "", "", "", "", ""];
+var newGameSuccess = function newGameSuccess(games) {
   $('#message').text('New Game Success! Welcome :)');
   console.log(store);
   $('.gameBoard').show();
   $('.testing').hide();
+  $('form').trigger('reset');
 };
 var newGameFailure = function newGameFailure(error) {
   $('#message').text('new game failed wit error: ' + error.responseJSON.message);
+  $('form').trigger('reset');
+};
+var getGamesSuccess = function getGamesSuccess(responseData) {
+  console.log(responseData);
+  var numberOfGamesPlayed = responseData.games.length;
+
+  $('#message').text('Total Games Played: ' + numberOfGamesPlayed);
+  $('form').trigger('reset');
 };
 
 module.exports = {
@@ -16911,7 +16908,8 @@ module.exports = {
   signOutSuccess: signOutSuccess,
   newGameSuccess: newGameSuccess,
   newGameFailure: newGameFailure,
-  signOutFailure: signOutFailure
+  signOutFailure: signOutFailure,
+  getGamesSuccess: getGamesSuccess
 
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(47)))
