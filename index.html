@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+            <html>
+            
+                <head>
+                    
+                  <title>TICTACTOTAL</title>
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+                  <!-- Do not add `link` tags-->
+                  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+                  <!-- Do not add `script` tags-->
+                  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+                  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+            
+            </head>
+                <body>
+                  <h1 class='head1'>Tic Tac Total</h1>
+                  <h2 class='head2'>BY JGP$</h2>
+                  <p id="message"></p>
+                  <div class="unauthenticated">
+                  <form id="sign-up">
+                    <input
+                      placeholder="email"
+                      type="text"
+                      name="credentials[email]"
+                    />
+                    <input
+                      type="password"
+                      placeholder="Enter password here"
+                      name="credentials[password]"
+                    />
+                    <input
+                      placeholder="Confirm password here"
+                      type="password"
+                      name="credentials[password_confirmation]"
+                    />
+                    <button type="submit">Sign Up</button>
+                  </form>
+                 
+                  <form id="sign-in">
+                    <input
+                      placeholder="email"
+                      type="text"
+                      name="credentials[email]"
+                    />
+                    <input
+                      placeholder="password"
+                      type="password"
+                      name="credentials[password]"
+                    />
+                    <button type="submit">Sign In</button>
+                  </form>
+                </div>
+                  <div class="authenticated">
+                  <form id="change-password">
+                    <input
+                      placeholder="old password"
+                      type="password"
+                      name="passwords[old]"
+                    />
+                    <input
+                      placeholder="new password"
+                      type="password"
+                      name="passwords[new]"
+                    />
+                    <button type="submit" >Change Password</button>
+                    </form>          
+                    
+
+                      <button type='click' class="signOut">Sign Out!!</button>
+
+                      
+                      <div class="play-now-div">
+                        <button type="click" class="testing">New Game</button>
+                        <button type="click" class="getGames" >Get Games!</button>
+                        </div>
+                   </div>
+                   </div>
+                   
+                   
+                      <section class='gameBoard'>
+
+                     <h1 class="game-title"></h1>
+        <div class="game-container">
+            <div data-cell-index="0" class="cell"></div>
+            <div data-cell-index="1" class="cell"></div>
+            <div data-cell-index="2" class="cell"></div>
+            <div data-cell-index="3" class="cell"></div>
+            <div data-cell-index="4" class="cell"></div>
+            <div data-cell-index="5" class="cell"></div>
+            <div data-cell-index="6" class="cell"></div>
+            <div data-cell-index="7" class="cell"></div>
+            <div data-cell-index="8" class="cell"></div>
+        </div>
+        <h2 class="game--status"></h2>
+        <button class="game--restart">RE$ET</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
