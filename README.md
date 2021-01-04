@@ -30,12 +30,22 @@ Unsolved problems would be modifying the code I learned , and implementing it in
 
 ## Wireframes/User stories
 
+Frame - https://files.slack.com/files-pri/T0351JZQ0-F01GEEXQENP/image_from_ios.jpg
 
 User
+
 1.Sign up
+
+
 2. Sign in
+
 3 . Log in
+
 4. Change Password
+
 5. New Game
+
 6 Game Play Functionality
+
 7. Reset Game 
+
