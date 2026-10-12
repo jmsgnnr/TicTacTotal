@@ -15,7 +15,6 @@ const signUpFailure = function (error) {
 
 const signInSuccess = function (response) {
   $('#message').text('Sign In Success! Welcome :)')
-  console.log(store)
   store.user = response.user
   
 $('.unauthenticated').hide()
@@ -58,7 +57,6 @@ $('form').trigger('reset')
   }
   const newGameSuccess = function (games){
     $('#message').text('New Game Success! Welcome :)')
-    console.log(store)
     $('.gameBoard').show()
     $('.testing').hide()
     $('form').trigger('reset')
@@ -71,7 +69,6 @@ $('form').trigger('reset')
   
 }
 const getGamesSuccess = function (responseData) {
-  console.log(responseData)
   const numberOfGamesPlayed = responseData.games.length
 
   $('#message').text('Total Games Played: ' + numberOfGamesPlayed)

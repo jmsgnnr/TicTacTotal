@@ -20,7 +20,6 @@ const signIn = function (formData) {
 }
 
 const changePassword = function (formData) {
-  console.log(store.user)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',

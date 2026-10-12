@@ -12,6 +12,9 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.3"
   },
+  "scripts": {
+    "test:unit": "node --test tests/*.test.cjs"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",

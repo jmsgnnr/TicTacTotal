@@ -1,3 +1,15 @@
+## Maintenance note (2026)
+
+Pure tic-tac-toe rules live in `assets/scripts/gameEngine.js` (no DOM or npm dependencies). The browser UI adapter is `assets/scripts/gameLogic.js`. Unit tests use Node built-in test runner only; the legacy Webpack 3 browser bundle has **not** been re-run or validated in this maintenance pass.
+
+Run unit tests:
+
+```bash
+npm run test:unit
+```
+
+Maintenance refactor credit: [@jmsgnnr](https://github.com/jmsgnnr). Source includes game-rule references from the original 2021 README; third-party authors retain their rights.
+
 ## Functions
 
 
