@@ -5,10 +5,8 @@
                     
                   <title>TICTACTOTAL</title>
                   <meta name="viewport" content="width=device-width, initial-scale=1">
-                  <!-- Do not add `link` tags-->
                   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-                  <!-- Do not add `script` tags-->
-                  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+                  <link rel="stylesheet" href="public/application.css">
                   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
             
             </head>
@@ -91,10 +89,9 @@
             <div data-cell-index="7" class="cell"></div>
             <div data-cell-index="8" class="cell"></div>
         </div>
-        <h2 class="game--status"></h2>
+        <h2 class="game--status" aria-live="polite"></h2>
         <button class="game--restart">RE$ET</button>
     </section>
 
-    <script src="script.js"></script>
 </body>
 </html>
